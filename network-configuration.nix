@@ -5,11 +5,12 @@
     hostName = "pve";
     hostId = "73eb52c1"; # "$(head -c 8 /etc/machine-id)";
     networkmanager.enable = false;
-    interfaces.eno1.ipv4.addresses = [ {
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    interfaces.eno2.ipv4.addresses = [ {
       address = "192.168.2.12";
       prefixLength = 24;
     } ];
-    interfaces.eno2.useDHCP = true;
+    # interfaces.eno2.useDHCP = true;
   };
 
   # make the tailscale command usable to users
